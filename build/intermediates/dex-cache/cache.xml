@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\DANIEL\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="21.1.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\Users\DANIEL\Desktop\Practicas\P7 Dibuja1\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_26daeb2b82a3053270d6cee3291b6b206b73109d.jar" />
+    </item>
+
+</items>
