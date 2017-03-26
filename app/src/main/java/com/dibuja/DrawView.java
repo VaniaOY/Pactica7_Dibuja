@@ -5,7 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.text.Layout;
 import android.view.View;
 
 public class DrawView extends View {
@@ -35,19 +37,41 @@ public class DrawView extends View {
         canvas.drawLine(0, 0, 350, 100, paint);
 
 
+        canvas.drawOval(ovalo1, paint);
+        canvas.drawArc(ovalo1, 10, 120,false, paint);
+
+*/
+
+        paint.reset();
+        paint.setColor(Color.GREEN);
+        paint.setStyle(Paint.Style.FILL);
+        RectF ovalo1 =  new RectF(400,400,50,30);
         Path trazo = new Path();
-        trazo.addCircle(150, 450, 100, Path.Direction.CCW);
-        paint.setColor(Color.BLUE);
-        paint.setStrokeWidth(8);
+        trazo.moveTo(500, 200);
+        trazo.cubicTo(500,200, 600,300, 700,200);
+        trazo.moveTo(700, 200);
+        trazo.cubicTo(700,200, 750,180, 780,300);
+        trazo.moveTo(780, 300);
+        trazo.cubicTo(780,300, 750,420, 700,400);
+        trazo.moveTo(700, 400);
+        trazo.cubicTo(700,400, 600,300, 500,400);
+        trazo.moveTo(500, 400);
+        trazo.cubicTo(500,400, 450,420, 420,300);
+        trazo.moveTo(420, 300);
+        trazo.cubicTo(420,300, 450,180, 500,200);
+        //trazo.lineTo(700,800);
+        //trazo.addOval(ovalo1, Path.Direction.CW);
+        paint.setStrokeWidth(4);
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawPath(trazo, paint);
         paint.setStrokeWidth(1);
         paint.setStyle(Paint.Style.FILL);
         paint.setTextSize(20);
         paint.setTypeface(Typeface.SANS_SERIF);
-        canvas.drawTextOnPath("Cecyt 9 \"Juan de Dios Bátiz\" graficos en Android ", trazo, 150, 40, paint);
-*/
+        canvas.drawTextOnPath("Vania Alice Ortiz Yescas ", trazo, 0, 30, paint);
+
         //.drawText(text, x, y, paint)
+        paint.setColor(Color.BLACK);
         paint.setTextSize(20);
         canvas.drawText("Practica 7 Dibujando Figuras", 450, 30, paint);
         canvas.drawText("Vania Alice Ortiz Yescas", 450, 55, paint);
@@ -86,7 +110,7 @@ public class DrawView extends View {
 
         paint.reset();
         //estrella
-        paint.setColor(Color.GREEN);
+        paint.setColor(Color.rgb(255, 196, 1));
         float[] punto = new float[20];
         punto[0] = (float) 1200-80;
         punto[1] = (float) 430-40;
@@ -120,6 +144,7 @@ public class DrawView extends View {
         canvas.drawLine(punto[14],   punto[15], punto[16], punto[17], paint);
         canvas.drawLine(punto[16], punto[17], punto[18], punto[19], paint);
         canvas.drawLine(punto[18], punto[19], punto[0], punto[1], paint);
+
 
     }
 
